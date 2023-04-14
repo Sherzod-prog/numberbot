@@ -1,13 +1,13 @@
 const TelegramApi = require("node-telegram-bot-api");
 const { gameOptions, againOptions } = require("./optins");
 const { TOKEN, APP_URL } = require("./config.js");
-const bot = new TelegramApi(TOKEN, {
-  webHook: {
-    port: process.env.PORT,
-  },
+const bot = new TelegramApi(TOKEN, { polling:true
+  // webHook: {
+  //   port: process.env.PORT,
+  // },
 });
 
-bot.setWebHook(`${APP_URL}/bot${TOKEN}`);
+// bot.setWebHook(`${APP_URL}/bot${TOKEN}`);
 
 const chats = {};
 
